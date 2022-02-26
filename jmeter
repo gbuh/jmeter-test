@@ -1,14 +1,9 @@
 #!/bin/sh
 
-pwd;
-ls -ltrh;
+sudo mkdir -p html/1
+sudo mkdir -p result/1
 
-mkdir -p html/1
-mkdir -p result/1
-
-java -version;
-
-curl https://ftp.cixug.es/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz -o apache-jmeter-5.4.1.tgz;
+wget https://ftp.cixug.es/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz -o apache-jmeter-5.4.1.tgz;
 tar -xvzf apache-jmeter-5.4.1.tgz;
 cd apache-jmeter-5.4.1/bin
  

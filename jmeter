@@ -1,8 +1,8 @@
 #!/bin/sh
 
-apt-get install apache2 -y
-systemctl start apache2
-systemctl enable apache2
+sudo apt-get install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
 
 sudo mkdir -p /usr/lib/jmeter;
 sudo rm -rf /tmp/*;

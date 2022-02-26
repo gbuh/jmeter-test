@@ -1,0 +1,32 @@
+name: 'on-demand-codebuild'
+
+on:
+  workflow_dispatch:
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        requred: true
+      AWS_SECRET_ACCESS_KEY:
+        requred: true
+    inputs:
+      suite:
+        requred: true
+
+jobs:
+  on-demand-test:
+    name: 'on-demand-automation'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+      - name: Run i-test-automation
+        uses: aws-actions/aws-codebuild-run-build@v1.0.3
+        with:
+          project-name: i-test-automation
+          buildspec-override: buildspec.yml

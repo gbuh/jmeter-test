@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo Start...
+      - ls -lah
+      - chmod +x jmeter
+      - chmod +x ./scripts/test_execution.sh
+  build:
+    commands:
+      - bash ./scripts/test_execution.sh
+      - echo "build completed"

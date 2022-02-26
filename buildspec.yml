@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Start...
       - ls -lah
-      - chmod +x jmeter
+      - chmod +x jmeters
       - chmod +x ./scripts/test_execution.sh
   build:
     commands:

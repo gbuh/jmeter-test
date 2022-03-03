@@ -7,11 +7,11 @@ phases:
       - echo Start...
       - ls -lah
       - chmod +x launch.sh
-      - chmod +x docker_distributed_jmeter.sh
+      # - chmod +x docker_distributed_jmeter.sh
       # - chmod +x ./scripts/test_execution.sh
   build:
     commands:
-      - bash launch.sh
-      - bash docker_distributed_jmeter.sh
+      - docker build -t jmeter
+      - docker-compose up -d
        # - bash ./scripts/test_execution.sh
       - echo "build completed"

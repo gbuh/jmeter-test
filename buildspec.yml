@@ -11,7 +11,7 @@ phases:
       # - chmod +x ./scripts/test_execution.sh
   build:
     commands:
-      - docker build -t jmeter .
+      # - docker build -t jmeter .
       - docker-compose up -d
        # - bash ./scripts/test_execution.sh
       - echo "build completed"

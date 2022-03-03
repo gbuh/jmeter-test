@@ -1,14 +1,18 @@
-version: 0.2
-phases:
-  install:
-    runtime-versions:
-      java: corretto11
-    commands:
-      - echo Start...
-      - ls -lah
-      - chmod +x jmeters
-      - chmod +x ./scripts/test_execution.sh
-  build:
-    commands:
-      - bash ./scripts/test_execution.sh
-      - echo "build completed"
+version: '3'
+
+services:
+  slave-1:
+    image: jmeter
+    volumes:
+     - .:/mnt/jmeter
+    command: -s -n -Jclient.rmi.localport=7000 -Jserver.rmi.localport=60000
+  slave-2:
+    image: jmeter
+    volumes:
+     - .:/mnt/jmeter
+    command: -s -n -Jclient.rmi.localport=7000 -Jserver.rmi.localport=60000
+  slave-3:
+    image: jmeter
+    volumes:
+     - .:/mnt/jmeter
+    command: -s -n -Jclient.rmi.localport=7000 -Jserver.rmi.localport=60000

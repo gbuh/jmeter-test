@@ -1,6 +1,6 @@
 #!/bin/sh
 # sudo apt-get remove docker docker-engine docker.io
-apt install docker.io
+apt install docker-ce docker-ce-cli containerd.io
 systemctl start docker
 systemctl enable docker
 docker --version

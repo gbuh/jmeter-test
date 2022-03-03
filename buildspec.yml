@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Start...
       - ls -lah
-      # - chmod +x jmeters
+      - chmod +x Dockerfile
       - chmod +x ./docker_distributed_jmeter.sh
   build:
     commands:

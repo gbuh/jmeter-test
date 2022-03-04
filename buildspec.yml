@@ -7,11 +7,22 @@ phases:
       - echo Start...
       - ls -lah
       - chmod +x launch.sh
+      - apt-get update
+      - apt-get install -y wget unzip
       # - chmod +x docker_distributed_jmeter.sh
       # - chmod +x ./scripts/test_execution.sh
   build:
     commands:
+      - mkdir -p html
+      - mkdir -p results
+      - wget https://downloads.apache.org.//jmeter/binaries/apache-jmeter-5.4.3.zip
+      - unzip -qq apache-jmeter-5.4.3.zip
+      - cd apache-jmeter-5.4.3/bin
+      - ls -lah
+      - cat results.csv
+      - cd ../html
+      - ls -lah
       # - docker build -t jmeter .
-      - docker-compose up -d
-       # - bash ./scripts/test_execution.sh
+      # - docker-compose up -d
+      # - bash ./scripts/test_execution.sh
       - echo "build completed"

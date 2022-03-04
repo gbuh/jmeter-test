@@ -19,6 +19,8 @@ phases:
       - unzip -qq apache-jmeter-5.4.3.zip
       - cd apache-jmeter-5.4.3/bin
       - ls -lah
+      - bash jmeter.sh -n -t ../../Test1.jmx -l ../../results.csv -e -o ../../html
+      - ls -lah
       - cat results.csv
       - cd ../html
       - ls -lah

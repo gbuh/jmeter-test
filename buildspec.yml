@@ -13,17 +13,17 @@ phases:
       # - chmod +x ./scripts/test_execution.sh
   build:
     commands:
-      # - mkdir -p html
+      - mkdir -p html
       - mkdir -p report
       - wget https://downloads.apache.org.//jmeter/binaries/apache-jmeter-5.4.3.zip
       - unzip -qq apache-jmeter-5.4.3.zip
       - cd apache-jmeter-5.4.3/bin
       - ls -lah
-      - bash jmeter.sh -n -t ../../test.jmx -l ../../results.csv -e -o ../../report -f
-      - cd ../../
+      - bash jmeter.sh -n -t ../../test.jmx -l ../../report/results.csv -e -o ../../html
+      - cd ../../report
       - ls -lah
       - cat results.csv
-      - cd ../../report
+      - cd ../../html
       - ls -lah
       # - docker build -t jmeter .
       # - docker-compose up -d

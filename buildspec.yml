@@ -1,4 +1,7 @@
 version: 0.2
+env:
+  variables:
+    S3_BUCKET: i-perf-test
 phases:
   install:
     runtime-versions:
@@ -28,6 +31,7 @@ phases:
       - mv -i upload/results upload/html/results
       - cd upload/html
       - ls -lah
+      - aws s3 sync . s3://${S3_BUCKET}
       # - docker build -t jmeter .
       # - docker-compose up -d
       # - bash ./scripts/test_execution.sh

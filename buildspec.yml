@@ -33,7 +33,7 @@ phases:
       - ls -lah
       # - cd ../../
       # - python3 scripts/s3_upload.py
-      - aws s3 sync . s3://${S3_BUCKET} --acl bucket-owner-full-control
+      - aws s3 sync . s3://${S3_BUCKET} 
       # - docker build -t jmeter .
       # - docker-compose up -d
       # - bash ./scripts/test_execution.sh

@@ -31,6 +31,7 @@ phases:
       - mv -i upload/results upload/html/results
       - cd upload/html
       - ls -lah
+      - cd ../../
       - python3 scripts/s3_upload.py
       # - aws s3 sync . s3://${S3_BUCKET}
       # - docker build -t jmeter .

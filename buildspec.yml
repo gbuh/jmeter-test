@@ -10,7 +10,11 @@ phases:
       - echo Start...
       - ls -lah
       - chmod +x launch.sh
-      - yum update
+      - yum install -y yum-utils
+      - yum remove -y libuv-1.39.0-1.amzn2.x86_64
+      - yum clean all
+      - rm -rf /var/cache/yum
+      - yum update -y
       - yum install -y wget unzip
       # - chmod +x docker_distributed_jmeter.sh
       # - chmod +x ./scripts/test_execution.sh

@@ -22,7 +22,7 @@ phases:
     commands:
       - mkdir -p upload/html
       - mkdir -p upload/results
-      - curl -q https://downloads.apache.org.//jmeter/binaries/apache-jmeter-5.4.3.zip
+      - curl -q https://downloads.apache.org.//jmeter/binaries/apache-jmeter-5.4.3.zip --output apache-jmeter-5.4.3.zip
       - unzip -qq apache-jmeter-5.4.3.zip
       - cd apache-jmeter-5.4.3/bin
       - ls -lah

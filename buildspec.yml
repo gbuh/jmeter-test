@@ -15,14 +15,14 @@ phases:
       - yum clean all
       - rm -rf /var/cache/yum
       - yum update -y
-      - yum install -y wget unzip
+      # - apt-get install -y wget unzip
       # - chmod +x docker_distributed_jmeter.sh
       # - chmod +x ./scripts/test_execution.sh
   build:
     commands:
       - mkdir -p upload/html
       - mkdir -p upload/results
-      - wget -q https://downloads.apache.org.//jmeter/binaries/apache-jmeter-5.4.3.zip
+      - curl -q https://downloads.apache.org.//jmeter/binaries/apache-jmeter-5.4.3.zip
       - unzip -qq apache-jmeter-5.4.3.zip
       - cd apache-jmeter-5.4.3/bin
       - ls -lah

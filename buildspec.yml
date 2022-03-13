@@ -10,6 +10,7 @@ phases:
       - echo Start...
       - ls -lah
       - chmod +x launch.sh
+      - locate apt-get
       - apt-get update
       - apt-get install -y wget unzip
       # - chmod +x docker_distributed_jmeter.sh

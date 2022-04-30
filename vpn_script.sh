@@ -4,13 +4,13 @@ sleep 2
 
 echo -e '\n\e[42mStarting Wireguard Installation\e[0m\n' && sleep 2
 
-apt-get update && apt-get upgrade -y
+yum update && yum upgrade -y
 
-apt-get install ufw  -y
-apt-get install qrencode -y
+yum install ufw  -y
+yum install qrencode -y
 sudo ufw allow 51820/udp && sudo ufw reload
 
-apt-get install wireguard -y 
+yum install wireguard -y 
 
 wg genkey | tee /etc/wireguard/privatekey | wg pubkey | tee /etc/wireguard/publickey
 chmod 600 /etc/wireguard/privatekey
